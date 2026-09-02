@@ -67,7 +67,7 @@
 </head>
 <body>
     <h1>Datenschutzerklärung für die Apps von pitower</h1>
-    <p class="update-date"><em>Stand: 12. Juli 2026</em></p>
+    <p class="update-date"><em>Stand: 2. September 2026</em></p>
 
     <p><strong>Geltungsbereich:</strong> Diese Datenschutzerklärung gilt für die App
     <strong>ZeroFlow</strong> sowie für die weiteren, rein lokal arbeitenden Apps von
@@ -84,6 +84,7 @@
             <li>Die App greift <strong>nicht auf deinen Standort (GPS)</strong> zu. Kalenderdaten werden nur lokal auf dem Gerät gelesen und nie übertragen.</li>
             <li>Damit dein Pendler-Briefing berechnet werden kann, sendet die App deine <strong>Pendler-Konfiguration</strong> (Bahnhöfe, Linien, Uhrzeiten) an unseren Server.</li>
             <li>Nur wenn du den <strong>Server-Verspätungsalarm</strong> (Push) aktivierst, wird zusätzlich eine zufällige Geräte-ID mit deiner Konfiguration auf dem Server gespeichert — löschbar jederzeit in der App, automatisch spätestens 90 Tage nach der letzten Nutzung.</li>
+            <li>Unser Server steht in <strong>Frankfurt am Main</strong>. Das Briefing wird <strong>regelbasiert</strong> erzeugt — ohne KI-Sprachmodell und ohne Weitergabe deiner Daten an KI-Anbieter. Es gibt keine automatisierten Entscheidungen über dich.</li>
         </ul>
     </div>
 
@@ -100,36 +101,48 @@
 
     <h2>2. Übersicht: Welche Daten verarbeitet werden</h2>
     <table>
-        <tr><th>Verarbeitung</th><th>Daten</th><th>Wo</th><th>Speicherdauer</th></tr>
+        <tr><th>Verarbeitung</th><th>Daten</th><th>Wo</th><th>Speicherdauer</th><th>Rechtsgrundlage</th></tr>
         <tr>
             <td>Lokale App-Einstellungen</td>
             <td>Pendlerstrecken, Alarme, Premium-Status, Widget-Daten</td>
             <td>Nur auf deinem Gerät</td>
             <td>Bis zur Löschung der App</td>
+            <td>Keine Verarbeitung durch uns</td>
         </tr>
         <tr>
             <td>Briefing-Abruf</td>
             <td>Pendler-Konfiguration (Bahnhöfe, Linien, Uhrzeiten; optional Verkehrs-Adressen) — <strong>ohne Geräte-ID</strong></td>
             <td>Unser Server (Kurzzeit-Cache + Konfigurations-Cache)</td>
             <td>Ergebnis-Cache ca. 5 Minuten; Konfigurations-Cache 30 Tage nach letzter Nutzung</td>
+            <td>Vertragserfüllung (Art. 6 Abs. 1 lit. b); Vorberechnung: berechtigtes Interesse (lit. f)</td>
         </tr>
         <tr>
             <td>Push-Verspätungsalarm (optional, nur iOS)</td>
             <td>Zufällige Geräte-ID, Apple-Push-Token, Pendler-Konfiguration, Alarm-Schwellwert</td>
             <td>Unser Server (Datenbank)</td>
             <td>Bis zur Deaktivierung/Löschung in der App, bei ungültigem Push-Token, spätestens 90 Tage nach letzter Nutzung</td>
+            <td>Vertragserfüllung (Art. 6 Abs. 1 lit. b)</td>
         </tr>
         <tr>
             <td>Versand-Protokoll der Alarme</td>
             <td>Geräte-ID + Kennung der gesendeten Benachrichtigung</td>
             <td>Unser Server</td>
             <td>2 Tage</td>
+            <td>Vertragserfüllung (Art. 6 Abs. 1 lit. b)</td>
         </tr>
         <tr>
             <td>Server-Protokolle (Logs)</td>
             <td>IP-Adresse, Zeitpunkt, aufgerufene Adresse</td>
             <td>Unser Server</td>
             <td>Maximal 30 Tage</td>
+            <td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)</td>
+        </tr>
+        <tr>
+            <td>Fehlerprotokolle fehlgeschlagener Anfragen</td>
+            <td>Inhalt der fehlgeschlagenen Anfrage (Pendler-Konfiguration; bei einer fehlgeschlagenen Push-Registrierung auch Geräte-ID und Push-Token)</td>
+            <td>Unser Server</td>
+            <td>7 Tage</td>
+            <td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)</td>
         </tr>
     </table>
 
@@ -162,6 +175,9 @@
         <li>bei aktivierter Verkehrsfunktion (Premium): die von dir eingegebene Start- und Zieladresse der Autoroute,</li>
         <li>gewählte Stadt für Wetterdaten und gewählte öffentliche Telegram-Kanäle.</li>
     </ul>
+    <p>Das Briefing wird auf unserem Server <strong>regelbasiert</strong> aus Fahrplan-, Wetter-,
+    Verkehrs- und News-Daten zusammengesetzt; ein KI-Sprachmodell kommt dabei nicht zum
+    Einsatz (siehe 3.10).</p>
     <p>Der Briefing-Abruf enthält <strong>keine Geräte-ID und keinen Namen</strong>. Auf dem Server
     werden die berechneten Ergebnisse kurzzeitig zwischengespeichert (ca. 5 Minuten),
     damit wiederholte Abrufe schnell beantwortet werden können. Zusätzlich wird die
@@ -199,15 +215,17 @@
     USA. An Apple werden das Push-Token und der Inhalt der Benachrichtigung (z. B. Linie,
     Uhrzeit, Verspätung, Gleis) übermittelt. Apple Inc. ist unter dem
     <strong>EU-US Data Privacy Framework</strong> zertifiziert; die Übermittlung erfolgt auf dieser
-    Grundlage (Art. 45 DSGVO). Datenschutzerklärung von Apple:
+    Grundlage (Art. 45 DSGVO), ergänzend auf Grundlage der in Apples Vertragsbedingungen
+    enthaltenen Standardvertragsklauseln (Art. 46 DSGVO; siehe Abschnitt 4).
+    Datenschutzerklärung von Apple:
     <a href="https://www.apple.com/de/legal/privacy/">https://www.apple.com/de/legal/privacy/</a></p>
     <p>Die Android-Version von ZeroFlow nutzt <strong>keine</strong> Server-Push-Registrierung;
     Alarme werden dort ausschließlich lokal auf dem Gerät berechnet.</p>
 
     <h3>3.6 Hosting und Server-Protokolle</h3>
     <p>Unser Backend-Server wird bei <strong>Hostinger</strong> (HOSTINGER operations, UAB,
-    Švitrigailos str. 34, Vilnius, Litauen) betrieben
-    <!-- [SERVERSTANDORT im Hostinger-Panel prüfen und hier ergänzen, z. B. „Serverstandort: Deutschland"] -->.
+    Švitrigailos str. 34, Vilnius, Litauen) betrieben. <strong>Serverstandort: Frankfurt am Main,
+    Deutschland</strong> — deine Daten verlassen für den Betrieb der App die EU nicht.
     Mit dem Hosting-Anbieter besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.
     Teile der Fahrplan-Berechnung laufen zusätzlich auf eigenen, vom Verantwortlichen
     betriebenen Servern; dorthin werden nur Streckenanfragen (Bahnhöfe, Zeiten) ohne
@@ -216,6 +234,10 @@
     (IP-Adresse, Zeitpunkt, aufgerufene Adresse, Statuscode). Sie dienen der
     Betriebssicherheit, Fehleranalyse und Missbrauchsabwehr (u. a. Ratenbegrenzung) und
     werden nach <strong>maximal 30 Tagen</strong> gelöscht oder anonymisiert.
+    Schlägt eine Anfrage an unseren Server fehl, wird sie zur Fehleranalyse
+    <strong>7 Tage</strong> lang mit ihrem Inhalt protokolliert; bei einer fehlgeschlagenen
+    Push-Registrierung können das auch Geräte-ID und Push-Token sein. Erfolgreiche Anfragen
+    werden nicht inhaltlich protokolliert.
     <strong>Rechtsgrundlage:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f DSGVO).</p>
 
     <h3>3.7 Externe Datenquellen</h3>
@@ -227,15 +249,20 @@
         Deutschland) sowie offene Fahrplandaten (GTFS/DELFI). Übermittelt werden
         Bahnhofsnummern/-namen und Zeiten der angefragten Verbindungen.
         Datenschutz DB: <a href="https://www.bahn.de/datenschutz">https://www.bahn.de/datenschutz</a></li>
-        <li><strong>Wetterdaten:</strong> WeatherAPI.com (WeatherAPI Ltd.). Übermittelt werden nur die
-        Koordinaten des Stadt-Mittelpunkts deiner gewählten Stadt — keine Geräteposition,
-        keine Identifikatoren. Datenschutz:
-        <a href="https://www.weatherapi.com/privacy.aspx">https://www.weatherapi.com/privacy.aspx</a></li>
+        <li><strong>Wetterdaten:</strong> WeatherAPI.com (WeatherAPI Ltd.) sowie — zur
+        Plausibilitätsprüfung der Werte und als Ausfallreserve — Open-Meteo (OpenMeteo GmbH,
+        Bürglen, Schweiz). An beide Dienste werden nur die Koordinaten des Stadt-Mittelpunkts
+        deiner gewählten Stadt übermittelt — keine Geräteposition, keine Identifikatoren.
+        Datenschutz WeatherAPI:
+        <a href="https://www.weatherapi.com/privacy.aspx">https://www.weatherapi.com/privacy.aspx</a>;
+        Open-Meteo: <a href="https://open-meteo.com/en/terms">https://open-meteo.com/en/terms</a></li>
         <li><strong>Verkehrsdaten (optional, Premium):</strong> Google Maps Platform / Directions API
         (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Übermittelt
         werden die von dir eingegebene Start- und Zieladresse der Autoroute. Eine
         Verarbeitung in den USA durch Google LLC ist möglich; Google LLC ist unter dem
-        EU-US Data Privacy Framework zertifiziert. Wenn du die Verkehrsfunktion nicht
+        EU-US Data Privacy Framework zertifiziert, ergänzend gelten die in Googles
+        Vertragsbedingungen enthaltenen Standardvertragsklauseln (siehe Abschnitt 4).
+        Wenn du die Verkehrsfunktion nicht
         aktivierst, werden keine Daten an Google übermittelt. Datenschutz:
         <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
         <li><strong>News (optional):</strong> Öffentliche Vorschau-Seiten der von dir gewählten
@@ -259,14 +286,47 @@
     Crash-Reporting-Dienst, kein Tracking über Apps und Websites Dritter i. S. v.
     Apples App-Tracking-Transparenz).</p>
 
+    <h3>3.10 Kein KI-Sprachmodell, keine automatisierten Entscheidungen</h3>
+    <p>Das in der App als „KI-Briefing" bezeichnete Tages-Briefing wird auf unserem
+    Server <strong>regelbasiert</strong> aus Fahrplan-, Wetter-, Verkehrs- und News-Daten
+    zusammengesetzt. Es kommt <strong>kein KI-Sprachmodell (LLM)</strong> zum Einsatz. Deine
+    Daten werden nicht an Anbieter von KI-Diensten übermittelt und nicht zum Training
+    von KI-Modellen verwendet. Kennzeichnungspflichten für KI-generierte Inhalte nach
+    der KI-Verordnung (EU) 2024/1689 sind daher nicht berührt.</p>
+    <p>Wir treffen <strong>keine automatisierten Entscheidungen im Einzelfall</strong> und
+    führen kein Profiling im Sinne von Art. 22 DSGVO durch. Verspätungsalarme und
+    Alternativvorschläge sind reine Informationsanzeigen ohne rechtliche Wirkung dir
+    gegenüber.</p>
+
+    <h3>3.11 Datensicherheit</h3>
+    <p>Wir schützen deine Daten durch technische und organisatorische Maßnahmen
+    (Art. 32 DSGVO), unter anderem:</p>
+    <ul>
+        <li>Alle Verbindungen zwischen App, unserem Server und den externen Diensten sind
+        <strong>TLS-verschlüsselt</strong> (HTTPS).</li>
+        <li><strong>Datensparsamkeit:</strong> Der Briefing-Abruf enthält keine Geräte-ID; die
+        Push-Registrierung nutzt eine zufällige ID ohne Bezug zu deinem Namen, deiner Apple-ID
+        oder Werbe-IDs.</li>
+        <li>Die Push-Registrierung ist durch ein in der App hinterlegtes Zugriffs-Token
+        geschützt; alle öffentlichen Server-Schnittstellen sind <strong>ratenbegrenzt</strong>,
+        um Missbrauch zu erschweren.</li>
+        <li>Zugangsdaten zu externen Diensten werden ausschließlich serverseitig verwahrt und
+        sind in der App nicht enthalten.</li>
+        <li>Feste Löschfristen (siehe Abschnitt 2) werden automatisiert durchgesetzt.</li>
+    </ul>
+
     <h2>4. Empfänger und Drittlandübermittlung</h2>
     <p>Empfänger personenbezogener Daten sind ausschließlich: unser Hosting-Anbieter
-    (Auftragsverarbeiter), Apple (Push-Zustellung, App Store) sowie — nur bei aktivierter
-    Verkehrsfunktion — Google (Routen-Adressen). Übermittlungen in die USA erfolgen auf
-    Grundlage des EU-US Data Privacy Framework (Art. 45 DSGVO) bzw., soweit ein Anbieter
-    nicht zertifiziert ist, auf Grundlage von Standardvertragsklauseln (Art. 46 DSGVO).
-    An WeatherAPI.com werden keine personenbezogenen Daten übermittelt (nur
-    Stadt-Koordinaten, Anfrage durch unseren Server).</p>
+    (Auftragsverarbeiter, Server in Frankfurt am Main), Apple (Push-Zustellung, App Store)
+    sowie — nur bei aktivierter Verkehrsfunktion — Google (Routen-Adressen).</p>
+    <p>Übermittlungen in die USA (Apple, ggf. Google) erfolgen auf Grundlage des
+    <strong>EU-US Data Privacy Framework</strong> (Angemessenheitsbeschluss, Art. 45 DSGVO).
+    Dieses Framework wird derzeit gerichtlich überprüft. Sollte es entfallen, stützen wir
+    die Übermittlungen auf die in den Vertragsbedingungen von Apple und Google enthaltenen
+    <strong>Standardvertragsklauseln</strong> (Art. 46 DSGVO); das gilt schon heute ergänzend.</p>
+    <p>An WeatherAPI.com, Open-Meteo (Schweiz) und Telegram werden <strong>keine
+    personenbezogenen Daten</strong> übermittelt — nur Stadt-Koordinaten bzw. öffentliche
+    Kanalnamen, und die Anfragen stellt unser Server, nicht dein Gerät.</p>
 
     <h2>5. Deine Rechte</h2>
     <p>Dir stehen nach der DSGVO folgende Rechte zu:</p>
@@ -275,8 +335,11 @@
         <strong>Einschränkung der Verarbeitung</strong> (Art. 18), <strong>Datenübertragbarkeit</strong> (Art. 20),</li>
         <li><strong>Widerspruch</strong> gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21),</li>
         <li><strong>Widerruf</strong> erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3),</li>
-        <li><strong>Beschwerde</strong> bei einer Datenschutz-Aufsichtsbehörde (Art. 77), z. B. der
-        Aufsichtsbehörde deines Wohnsitz-Bundeslandes.</li>
+        <li><strong>Beschwerde</strong> bei einer Datenschutz-Aufsichtsbehörde (Art. 77). Für uns
+        zuständig ist die Landesbeauftragte für Datenschutz und Informationsfreiheit
+        Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2–4, 40213 Düsseldorf,
+        <a href="https://www.ldi.nrw.de">https://www.ldi.nrw.de</a>. Du kannst dich auch an die
+        Aufsichtsbehörde deines Wohnsitzes wenden.</li>
     </ul>
     <p><strong>Selbst löschen:</strong> Die serverseitig gespeicherte Push-Registrierung kannst du
     jederzeit direkt in der App löschen (Einstellungen → „Server-Daten löschen" bzw.
