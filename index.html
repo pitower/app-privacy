@@ -113,7 +113,7 @@
             <td>Briefing-Abruf</td>
             <td>Pendler-Konfiguration (Bahnhöfe, Linien, Uhrzeiten; optional Verkehrs-Adressen) — <strong>ohne Geräte-ID</strong></td>
             <td>Unser Server (Kurzzeit-Cache + Konfigurations-Cache)</td>
-            <td>Ergebnis-Cache ca. 5 Minuten; Konfigurations-Cache 30 Tage nach letzter Nutzung</td>
+            <td>Ergebnis-Cache: ausgeliefert nur bis 5 Minuten alt, gespeichert bis 30 Tage nach der letzten Berechnung; Konfigurations-Cache 30 Tage nach letzter Nutzung</td>
             <td>Vertragserfüllung (Art. 6 Abs. 1 lit. b); Vorberechnung: berechtigtes Interesse (lit. f)</td>
         </tr>
         <tr>
@@ -186,8 +186,11 @@
     Verkehrs- und News-Daten zusammengesetzt; ein KI-Sprachmodell kommt dabei nicht zum
     Einsatz (siehe 3.10).</p>
     <p>Der Briefing-Abruf enthält <strong>keine Geräte-ID und keinen Namen</strong>. Auf dem Server
-    werden die berechneten Ergebnisse kurzzeitig zwischengespeichert (ca. 5 Minuten),
-    damit wiederholte Abrufe schnell beantwortet werden können. Zusätzlich wird die
+    werden die berechneten Ergebnisse zwischengespeichert, damit wiederholte Abrufe schnell
+    beantwortet werden können: Ausgeliefert werden nur Ergebnisse, die höchstens
+    <strong>5 Minuten</strong> alt sind (bei Ausfall der Fahrplanquellen ersatzweise bis zu
+    12 Stunden); gespeichert bleiben sie bis <strong>30 Tage nach der letzten Berechnung</strong>
+    und werden dann automatisch gelöscht. Zusätzlich wird die
     Pendler-Konfiguration (ohne Gerätebezug) bis zu <strong>30 Tage nach der letzten Nutzung</strong>
     gespeichert, um dein Briefing regelmäßig vorzuberechnen (schnellere Antwortzeiten).</p>
     <p><strong>Zweck:</strong> Bereitstellung der App-Funktionen. <strong>Rechtsgrundlage:</strong>
